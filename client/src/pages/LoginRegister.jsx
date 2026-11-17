@@ -19,7 +19,7 @@ export default function LoginRegister() {
     try {
       if (mode === "login") await login(form.email, form.password);
       else await register(form);
-      navigate("/");
+        navigate("/gallery");
     } catch (err) {
       const data = err.response?.data;
       setErrors(data?.errors || [data?.message || "Something went wrong. Please try again."]);

@@ -15,6 +15,7 @@ export default function Navbar() {
       <Link to="/" className="brand">Alzikrayat</Link>
       <div className="nav-links">
         <Link to="/">Home</Link>
+                <Link to="/gallery">Gallery</Link>
         {user ? (
           <>
             <span className="nav-user">Hi, {user.firstName}</span>
