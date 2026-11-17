@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
+import PhotoDetail from "./pages/PhotoDetail";
 import LoginRegister from "./pages/LoginRegister";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/photos/:id" element={<PhotoDetail />} />
           <Route path="/login" element={<LoginRegister />} />
         </Routes>
       </main>
