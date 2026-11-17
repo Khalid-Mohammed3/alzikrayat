@@ -9,7 +9,10 @@ export default function Home() {
       <h1>Alzikrayat</h1>
       <p>Share your photo memories and comment on the memories of others.</p>
       {user ? (
-        <p>Welcome back, {user.firstName}!</p>
+        <>
+          <p>Welcome back, {user.firstName}!</p>
+          <Link className="btn" to="/gallery">Go to the gallery</Link>
+        </>
       ) : (
         <Link className="btn" to="/login">Get started</Link>
       )}

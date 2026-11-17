@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 export default function LoginRegister() {
-  const { login, register } = useAuth();
+  const { user, login, register } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state?.from || "/gallery"; // page the user wanted
   const [mode, setMode] = useState("login");
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", password: "" });
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  // Already logged in: no need to see this page
+  if (user) return <Navigate to={redirectTo} replace />;
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -19,7 +24,7 @@ export default function LoginRegister() {
     try {
       if (mode === "login") await login(form.email, form.password);
       else await register(form);
-        navigate("/gallery");
+      navigate(redirectTo, { replace: true });
     } catch (err) {
       const data = err.response?.data;
       setErrors(data?.errors || [data?.message || "Something went wrong. Please try again."]);

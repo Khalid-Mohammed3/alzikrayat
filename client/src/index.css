@@ -76,3 +76,15 @@ input:focus, textarea:focus { outline: none; border-color: #12233f; }
 .comment-list p { margin: 0.3rem 0 0; }
 .comment-form textarea { margin-bottom: 0.6rem; }
 .form-error { color: #d64545; margin: 0 0 0.5rem; }
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; gap: 0.6rem; }
+  .nav-links { flex-wrap: wrap; justify-content: center; }
+  .container { padding: 1rem 0.75rem; }
+  .photo-grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .photo-card img { height: 130px; }
+  .photo-actions { flex-wrap: wrap; }
+}
+
+@media (max-width: 400px) {
+  .photo-grid { grid-template-columns: 1fr; }
+}
