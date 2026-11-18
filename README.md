@@ -3,7 +3,7 @@
 Full-stack photo sharing application built for the *Advanced Web Technologies* course (Project 3).
 Users can register, log in, upload photos, browse a gallery, and comment on photos.
 
-**Author:** Khalid Mohammed Saleh Khalid — Student ID: (your ID)
+**Author:** Khalid Mohammed Saleh Khalid — Student ID: 20201176367
 
 ## Features
 - Register / login with bcrypt-hashed passwords and JWT authentication
